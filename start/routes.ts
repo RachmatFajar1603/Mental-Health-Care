@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @adonisjs/prefer-lazy-controller-import */
 /*
 |--------------------------------------------------------------------------
 | Routes file
@@ -30,6 +32,7 @@ router
     router.post('/logout', [AccountsController, 'logout'])
     router.get('/register', [PagesController, 'register'])
     router.get('/about', [PagesController, 'about'])
+    router.get('/history', [PagesController, 'history'])
     router.get('/admin', [PagesController, 'admin'])
     router.get('/profile', [PagesController, 'profile'])
     router.get('/guide', [PagesController, 'guide'])
