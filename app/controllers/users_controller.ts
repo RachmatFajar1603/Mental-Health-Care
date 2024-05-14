@@ -81,10 +81,10 @@ export default class UsersController {
       const update = await user.save()
       if (update) {
         session.flash({ status: 'User updated successfully' })
-        return response.redirect('/beranda')
+        return response.redirect('/profile')
       } else {
         session.flash({ status: 'User cant updated' })
-        return response.redirect('/beranda')
+        return response.redirect('/profile')
       }
     }
   }
@@ -107,4 +107,6 @@ export default class UsersController {
       return // Add appropriate handling here
     }
   }
+
+  
 }

@@ -14,6 +14,8 @@ import router from '@adonisjs/core/services/router'
 import edge from 'edge.js'
 import { migrate } from 'edge.js/plugins/migrate'
 import { middleware } from './kernel.js'
+import QuizzesController from '#controllers/quizzes_controller'
+
 edge.use(migrate)
 
 
@@ -38,7 +40,7 @@ router
   router.post('/login', [AccountsController, 'login'])
   router.get('/login', [AccountsController, 'index'])
 
-
+  router.post('/quizzes', [QuizzesController, 'submit'])
 
   router.resource('account', AccountsController)
   // user route

@@ -4,100 +4,50 @@
 
 @!navbar()
 
-<form action="/quiz" method="post">
+<form action="{{route('/quizzes')}}" method="post">
+  {{csrfField()}}
   <div>
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak anda ketika sedang berbicara sering melantur atau tidak sesuai
         topik pembicaraan ?
       </div>
-      <label
-        class="justify-center items-center px-7 py-5 mt-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5 max-md:mt-10">
-        <input type="radio" name="answers[1]" value="yes">
-        Ya
-      </label>
-      <label
-        class="justify-center items-center px-7 py-5 mt-8 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5">
-        <input type="radio" name="answers[1]" value="no">
-        Tidak
-      </label>
+      @!choice({ name: 'answers[1]' })
     </div>
 
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak anda memiliki suatu peristiwa yang traumatis ?
       </div>
-      <label
-        class="justify-center items-center px-7 py-5 mt-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5 max-md:mt-10">
-        <input type="radio" name="answers[2]" value="yes">
-        Ya
-      </label>
-      <label
-        class="justify-center items-center px-7 py-5 mt-8 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5">
-        <input type="radio" name="answers[2]" value="no">
-        Tidak
-      </label>
+      @!choice({ name: 'answers[2]' })
     </div>
 
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak anda merasa gugup dan gelisah ?
       </div>
-      <label
-        class="justify-center items-center px-7 py-5 mt-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5 max-md:mt-10">
-        <input type="radio" name="answers[3]" value="yes">
-        Ya
-      </label>
-      <label
-        class="justify-center items-center px-7 py-5 mt-8 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5">
-        <input type="radio" name="answers[3]" value="no">
-        Tidak
-      </label>
+      @!choice({ name: 'answers[3]' })
     </div>
 
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak anda sering berhalusinasi ?
       </div>
-      <label
-        class="justify-center items-center px-7 py-5 mt-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5 max-md:mt-10">
-        <input type="radio" name="answers[4]" value="yes">
-        Ya
-      </label>
-      <label
-        class="justify-center items-center px-7 py-5 mt-8 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5">
-        <input type="radio" name="answers[4]" value="no">
-        Tidak
-      </label>
+      @!choice({ name: 'answers[4]' })
     </div>
 
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak andanberperilaku implusif dan hiperakti ?
       </div>
-      <label
-        class="justify-center items-center px-7 py-5 mt-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5 max-md:mt-10">
-        <input type="radio" name="answers[5]" value="yes">
-        Ya
-      </label>
-      <label
-        class="justify-center items-center px-7 py-5 mt-8 whitespace-nowrap rounded-3xl border border-solid border-slate-800 w-1/6 max-md:px-5">
-        <input type="radio" name="answers[5]" value="no">
-        Tidak
-      </label>
+      @!choice({ name: 'answers[5]' })
     </div>
 
-    <div class="flex flex-col items-center max-w-full mt-48 mb-48">
-      <button>
-        <a href="#"
-          class="bg-slate-500 text-white justify-center items-center px-20 py-5 mt-14 mb-14 whitespace-nowrap rounded-3xl border border-solid border-slate-800  max-md:px-5 max-md:mt-10">
-          Submit
-        </a>
-      </button>
+    <!-- Add more questions as needed -->
+
+    <div class="flex justify-center">
+      <button type="submit" class="mt-20 flex justify-center px-20 py-3 text-white whitespace-nowrap bg-gray-500 rounded-md md:px-5 ">Submit</button>
     </div>
-  </div>
 </form>
 
-
-
-@end
+@endsection
