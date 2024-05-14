@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Role from '#models/role'
 import User from '#models/user'
 import type { HttpContext } from '@adonisjs/core/http'
@@ -18,6 +19,10 @@ export default class PagesController {
 
   async about({ view }: HttpContext) {
     return view.render('pages/about')
+  }
+
+  async history({ view }: HttpContext) {
+    return view.render('pages/history')
   }
 
   async profile({ view }: HttpContext) {
