@@ -33,6 +33,12 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @column()
   declare phoneNumber: string | null
 
+  @column()
+  declare result: string | null
+
+  @column()
+  declare solution: string | null
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 

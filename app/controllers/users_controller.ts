@@ -17,7 +17,7 @@ export default class UsersController {
    * Handle form submission for the create action
    */
   async store({ request, response, session }: HttpContext) {
-    const data = request.only(['fullName', 'email', 'password', 'address', 'phoneNumber', 'roleId', 'id'])
+    const data = request.only(['fullName', 'email', 'password', 'address', 'phoneNumber', 'roleId', 'id', 'result', 'solution'])
 
     try {
       await User.create({
@@ -26,7 +26,9 @@ export default class UsersController {
         password: data.password,
         address: data.address,
         phoneNumber: data.phoneNumber,
-        id:data.id
+        id:data.id,
+        result:data.result,
+        solution:data.solution,
       })
 
       session.flash({ status: 'User created successfully' })
@@ -63,7 +65,7 @@ export default class UsersController {
    * Edit individual record
    */
   async edit({ params, request, response, session }: HttpContext) {
-    const data = request.only(['fullName', 'email', 'password', 'address', 'phoneNumber', 'roleId', 'id'])
+    const data = request.only(['fullName', 'email', 'password', 'address', 'phoneNumber', 'roleId', 'id', 'result', 'solution'])
     // validate password not null
     const user = await User.find(params.id)
     if (!data.password) {
@@ -78,6 +80,8 @@ export default class UsersController {
       user.address = data.address
       user.phoneNumber = data.phoneNumber
       user.roleId = data.roleId
+      user.result = data.result
+      user.solution = data.solution
       user.id = data.id
       const update = await user.save()
       if (update) {
