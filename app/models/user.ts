@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/explicit-member-accessibility */
 import { DateTime } from 'luxon'
 import hash from '@adonisjs/core/services/hash'
 import { compose } from '@adonisjs/core/helpers'
@@ -38,6 +40,9 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @column()
   declare solution: string | null
+
+  @column()
+  declare quizResults: { result: string, solution: string }[] // Array to store quiz results
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

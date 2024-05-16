@@ -45,7 +45,7 @@ export default class QuizzesController {
       // Returning the view with result and solution
       return view.render('question/output', { result, solusi })
     } catch (error) {
-      console.error('Failed to submit quiz:', error)
+      console.error('Failed to submit quiz:', error)  
       // Handle error accordingly, maybe return an error view
       return view.render('error', { message: 'Failed to submit quiz.' })
     }

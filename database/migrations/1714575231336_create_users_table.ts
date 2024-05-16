@@ -14,6 +14,7 @@ export default class extends BaseSchema {
       table.string('phone_number').nullable()
       table.string('result').nullable()
       table.string('solution').nullable()
+      table.string('quizResults').nullable()
       table.integer('role_id').unsigned().references('roles.id')
       table.timestamp('created_at').notNullable()
       table.timestamp('updated_at').nullable()
