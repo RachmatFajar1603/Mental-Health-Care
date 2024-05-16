@@ -25,6 +25,10 @@ export default class PagesController {
     return view.render('pages/history')
   }
 
+  async blog({ view }: HttpContext) {
+    return view.render('pages/blog')
+  }
+
   async profile({ view }: HttpContext) {
     return view.render('pages/profile')
   }
