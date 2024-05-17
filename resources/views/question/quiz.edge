@@ -6,7 +6,7 @@
 
 <form action="{{route('/quizzes')}}" method="post">
   {{csrfField()}}
-  <div>
+  <div data-aos="fade-up" data-aos-duration="1000">
     <div class="flex flex-col items-center px-5 text-xl font-medium text-center text-black max-w-full">
       <div class="self-stretch w-full text-black max-md:max-w-full mt-40">
         Apakah anak anda ketika sedang berbicara sering melantur atau tidak sesuai
@@ -46,7 +46,8 @@
     <!-- Add more questions as needed -->
 
     <div class="flex justify-center">
-      <button type="submit" class="mb-20 mt-20 shadow-2xl transition duration-300 ease-in-out flex justify-center items-center self-center px-10 py-5 text-xl font-medium leading-5 text-white whitespace-nowrap rounded-3xl bg-slate-500 w-80 md:px-5 md:mt-10 hover:bg-blue-500">Submit</button>
+      <button type="submit"
+        class="mb-20 mt-20 shadow-2xl transition duration-300 ease-in-out flex justify-center items-center self-center px-10 py-5 text-xl font-medium leading-5 text-white whitespace-nowrap rounded-3xl bg-slate-500 w-80 md:px-5 md:mt-10 hover:bg-blue-500 animate-bounce">Submit</button>
     </div>
 </form>
 
