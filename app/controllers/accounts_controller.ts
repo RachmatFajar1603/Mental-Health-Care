@@ -86,4 +86,5 @@ export default class AccountsController {
    * Delete record
    */
   async destroy({  }: HttpContext) {}
+  
 }
