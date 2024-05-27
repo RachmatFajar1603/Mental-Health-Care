@@ -104,7 +104,7 @@ export default class UsersController {
       if (user) {
         await user.delete()
         session.flash({ status: 'User deleted successfully' })
-        return response.redirect('/profile')
+        return response.redirect('/admin')
       }
     } catch (error) {
       console.error(error)
@@ -113,5 +113,5 @@ export default class UsersController {
     }
   }
 
-  
+
 }

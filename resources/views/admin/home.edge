@@ -2,10 +2,52 @@
 
 @section('body')
 
-@!navbar() 
+@!navAdmin()
 
-    
 
-<p>Ini adalah halaman home admin</p>
+@!aside()
+
+<div class="p-4 sm:ml-64">
+  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+
+    <h1 class="text-2xl font-bold text-neutral-800">List User</h1>
+    {{--  make table for get user  --}}
+    <table class="table-auto w-full">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">No</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Result</th>
+          <th class="px-4 py-2">Solution</th>
+          <th class="px-4 py-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @each( item in users)
+          <tr>
+            <td class="border px-4 py-2">{{item.id}}</td>
+            <td class="border px-4 py-2">{{item.fullName}}</td>
+            <td class="border px-4 py-2">{{item.email}}</td>
+            <td class="border px-4 py-2">{{item.result}}</td>
+            <td class="border px-4 py-2">{{item.solution}}</td>
+            <td class="border px-4 py-2">
+
+              <form class="mt-5" method="POST" action="{{ route('user.destroy', {id: item.id}, { qs: { _method: 'DELETE' } }) }}">
+                {{csrfField()}}
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+              </form>
+            </td>
+          </tr>
+        @endeach
+      </tbody>
+
+  </div>
+</div>
+
+
+
+
+
 
 @end
