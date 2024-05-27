@@ -43,6 +43,8 @@ router
 
   router.post('/login', [AccountsController, 'login'])
   router.get('/login', [AccountsController, 'index'])
+  
+  router.post('/admin', [AccountsController, 'adminPost'])
 
   router.post('/quizzes', [QuizzesController, 'submit'])
 

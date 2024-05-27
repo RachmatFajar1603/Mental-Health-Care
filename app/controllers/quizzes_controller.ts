@@ -21,21 +21,32 @@ export default class QuizzesController {
       }
 
       // Determining result and solution based on 'yes' count
-      let result = ''
-      let solusi = ''
+      let result = '';
+      let solusi = '';
+      
       if (yesCount === 0) {
-        result = 'Tidak Depresi'
-        solusi = 'Tetap jaga kesehatan mental Anda.'
-      } else if (yesCount === 5) {
-        result = 'Depresi Berat'
-        solusi = 'Kami sarankan Anda segera konsultasi dengan ahli kesehatan mental.'
+        result = 'Tidak Depresi';
+        solusi = 'Tetap jaga kesehatan mental Anda.';
       } else if (yesCount <= 2) {
-        result = 'Depresi Ringan'
-        solusi = 'Coba lakukan relaksasi dan aktivitas yang Anda sukai.'
+        result = 'Depresi Ringan';
+        solusi = 'Coba lakukan relaksasi dan aktivitas yang Anda sukai. Jika berlanjut, pertimbangkan konsultasi ringan.';
+      } else if (yesCount <= 4) {
+        result = 'Depresi Menengah';
+        solusi = 'Pertimbangkan untuk berbicara dengan konselor atau terapis.';
+      } else if (yesCount <= 6) {
+        result = 'Depresi Menengah Keberatan';
+        solusi = 'Segera konsultasikan dengan profesional kesehatan mental.';
+      } else if (yesCount <= 8) {
+        result = 'Depresi Berat';
+        solusi = 'Penting untuk mencari bantuan dari psikolog atau psikiater.';
+      } else if (yesCount <= 10) {
+        result = 'Depresi Sangat Berat';
+        solusi = 'Konsultasikan segera dengan profesional kesehatan mental dan pertimbangkan perawatan medis darurat.';
       } else {
-        result = 'Depresi Menengah'
-        solusi = 'Pertimbangkan untuk berbicara dengan konselor atau terapis.'
+        result = 'Depresi Sangat Parah dengan Risiko Tinggi';
+        solusi = 'Ini adalah keadaan darurat medis. Segera hubungi layanan darurat atau pergi ke rumah sakit terdekat.';
       }
+      
 
       // Update user model with quiz result
       user.result = result

@@ -7,6 +7,18 @@ export default class AccountsController {
   /**
    * Display a list of resource
    */
+  async adminPost({ response }: HttpContext) {
+    try {
+      // Tambahkan logika untuk menangani permintaan POST ke /admin di sini
+      return response.status(200).json({ message: 'Admin POST request handled successfully' })
+    } catch (error) {
+      // Tangani kesalahan jika terjadi
+      console.error(error)
+      return response.status(500).json({ message: 'Internal server error' })
+    }
+  }
+
+
   async index({ view }: HttpContext) {
     return view.render('pages/login')
   }
